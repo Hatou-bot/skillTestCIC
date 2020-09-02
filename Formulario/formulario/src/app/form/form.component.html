@@ -1,0 +1,10 @@
+<div class="col-8, m-5" >
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">  
+        <div class="form-group">
+            <label class="mb-3 text-capitalize font-weight-bold">Nombre código</label>
+            <input type="text" name="code" class="form-control w-50" formControlName="code" placeholder="Introduce el código" >
+            <input type="submit" [disabled]="formulario.invalid" class="btn btn-outline-primary btn-block mt-3 w-50">
+            <p class="error mt-3 border rounded border-danger w-50 p-2" *ngIf="formulario.controls.code.errors?.pattern && formulario.controls.code.touched"> El campo código debe tener 3 letras y 3 números</p>
+        </div>
+    </form> 
+</div>
